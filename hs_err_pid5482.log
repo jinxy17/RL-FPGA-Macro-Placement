@@ -1,0 +1,25 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/lib64/libc.so.6(+0x36400) [0x7fce15c78400]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_project.so(HAPRDesign::getNetlist() const+0) [0x7fcdd3258d20]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_project.so(HAPRDesignCheckpoint::restore(HAPRProject*, HDARPart const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, HDGUIStatus&, bool, bool, bool, std::unordered_set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)+0x283) [0x7fcdd327e5e3]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_tcltasks.so(+0xed8de1) [0x7fce006dbde1]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_common.so(+0x9cfb1d) [0x7fce17187b1d]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(+0x3356f) [0x7fce10fc556f]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(+0x34bf8) [0x7fce10fc6bf8]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(Tcl_EvalEx+0x13) [0x7fce10fc7163]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(Tcl_FSEvalFileEx+0x1da) [0x7fce1102bd2a]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_commontasks.so(+0x1f8c0d) [0x7fce03c48c0d]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_common.so(+0x9cfb1d) [0x7fce17187b1d]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(+0x3356f) [0x7fce10fc556f]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(+0x76945) [0x7fce11008945]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(+0x7e0f9) [0x7fce110100f9]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(TclEvalObjEx+0x76) [0x7fce10fc7216]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(Tcl_RecordAndEvalObj+0x143) [0x7fce11015bd3]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_commontasks.so(+0x2826c9) [0x7fce03cd26c9]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/libtcl8.5.so(Tcl_Main+0x620) [0x7fce11032740]
+/usr/local/packages/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_common.so(+0xa1442b) [0x7fce171cc42b]
+/lib64/libpthread.so.0(+0x7ea5) [0x7fce15a2dea5]
+/lib64/libc.so.6(clone+0x6d) [0x7fce15d40b0d]
