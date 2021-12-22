@@ -1,2 +1,4 @@
-data/*/
+checkpoints/
 __pycache__/
+.Xil/
+*.bak

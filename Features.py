@@ -4,12 +4,18 @@ class Features:
     def __init__(self, nodes="data/design.nodes", nets="data/design.nets"):
         # self.nodes = []
         self.nodedict = {}
+        node_types = set()
         with open(nodes) as fin:
             for line in fin:
                 line = line.split()
+                if line[1][:4] == "DSP_" or line[1] == "INBUF" or line[1] == "IBUFCTRL":
+                    continue
                 # self.nodes.append((line[0], line[1]))
                 self.nodedict[line[0]] = [line[1], -1]
+                node_types.add(line[1])
         print("imported %d nodes" % len(self.nodedict))
+        print(node_types)
+
         self.nets = []
         with open(nets) as fin:
             while True:
@@ -24,6 +30,10 @@ class Features:
                     line = line.split()
                     if line[0] == "endnet":
                         break
+                    # assert line[0] in self.nodedict
+                    if line[0] not in self.nodedict: # DSP_XXX, INBUF, IBUFCTRL
+                        line[0] = "/".join(line[0].split("/")[:-1])
+                    assert line[0] in self.nodedict
                     s.add(line[0])
                     n.append(line[0])
                 if len(s) > 1:
