@@ -27,5 +27,6 @@ for i in range(0, 2000, 10):
     x = x[1, :]
     x = net2(x)
     x = x.reshape(100*40)
+    x = x / 50.0
     x = F.softmax(x, dim=0).reshape(100, 40)
     np.save("checkpoints/%s/heat_map_%d.npy" % (exp_name, i), x.detach().numpy())

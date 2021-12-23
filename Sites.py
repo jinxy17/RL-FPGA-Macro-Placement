@@ -74,7 +74,7 @@ class Sites:
             x1 = max((x_avg - w // 2, 0))
             x2 = min((x_avg + w // 2, 2499))
             y1 = max((y_avg - h // 2, 0))
-            y2 = min((y_avg + h // 2, 1000))
+            y2 = min((y_avg + h // 2, 999))
             # print(x1, y1, x2, y2)
             count = self.get_count(x1, y1, x2, y2)
             if (util * count[0] * 8 >= used["LUT"]) and \

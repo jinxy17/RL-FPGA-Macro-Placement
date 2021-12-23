@@ -46,6 +46,7 @@ for epoch in range(2000):
     value = net3(x)[0]
     x = net2(x)
     x = x.reshape(100*40)
+    x = x / 50.0
     x = F.log_softmax(x, dim=0)
     m = Categorical(logits=x)
     action = int(m.sample())
@@ -65,6 +66,7 @@ for epoch in range(2000):
     fout.flush()
     loss.backward()
     opt.step()
+    # print("orig prob:", prob)
     # print("updated possibility:", float(F.softmax(net2(net1(data)[1, :]).reshape(100*40))[action]))
 
 p.exit()
