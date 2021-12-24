@@ -8,6 +8,7 @@ from torch.distributions.categorical import Categorical
 from Process import *
 from Sites import *
 from Model_small import *
+import matplotlib.pyplot as plt
 
 exp_name = input("Experiment name? ").strip()
 os.mkdir("checkpoints/%s" % exp_name)
@@ -17,9 +18,7 @@ print("epoch, probability, action-x, action-y, wirelength, critic-value, reward,
 
 p = Process()
 s = Sites()
-print("=======No cons======")
-wl = p.place_and_route()
-print("wl:", wl)
+print("no cons: wl =", p.place_and_route())
 
 x = torch.tensor(np.load("data/x.npy"), dtype=torch.float)
 edge_index = torch.tensor(np.load("data/edge_index.npy"), dtype=torch.long)
@@ -46,8 +45,12 @@ for epoch in range(2000):
     value = net3(x)[0]
     x = net2(x)
     x = x.reshape(100*40)
-    x = x / 50.0
+    # x = x / 5.0 # temperature
     x = F.log_softmax(x, dim=0)
+    if epoch % 10 == 0:
+        img = torch.exp(x.reshape(100, 40)).detach().numpy()
+        plt.imsave("checkpoints/%s/Map_%d_0.05.png" % (exp_name, epoch), img, vmin=0.0, vmax=0.05)
+        plt.imsave("checkpoints/%s/Map_%d_1.00.png" % (exp_name, epoch), img, vmin=0.0, vmax=1.00)
     m = Categorical(logits=x)
     action = int(m.sample())
     action_x = (action // 40) * 25
